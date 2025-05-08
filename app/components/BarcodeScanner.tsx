@@ -7,7 +7,7 @@ export default function BarcodeScanner() {
   const [result, setResult] = useState<string>('');
 
   useEffect(() => {
-    const codeReader = new BrowserMultiFormatReader();
+    const codeReader: any = new BrowserMultiFormatReader();
     let active = true;
 
     // helper to start decoding from a MediaStream
@@ -37,6 +37,7 @@ export default function BarcodeScanner() {
           deviceId,
           videoRef.current!,
           (result, err) => {
+            console.log('Decode from video device result:', result, err);
             if (!active) return;
             if (result) {
               setResult(result.getText());
