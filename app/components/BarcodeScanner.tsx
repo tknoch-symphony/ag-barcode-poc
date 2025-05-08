@@ -66,6 +66,8 @@ export default function BarcodeScanner() {
         ref={videoRef}
         style={{ width: '100%', maxWidth: 400, borderRadius: 8 }}
         muted
+        autoPlay
+        playsInline
       />
       <p className="mt-4 text-lg">Scanned Code: <strong>{result || '–––'}</strong></p>
     </div>
